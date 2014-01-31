@@ -28,7 +28,7 @@ Copy the `ripple-checkout.js` script and the `ripple-checkout-button.png` image 
       currency: 'XRP',
       issuer: '' // Issuer can be specified for non-XRP currencies or left blank
     },
-    dst_tag: Math.floor(Math.random() * 4294967295),
+    dst_tag: Math.floor(Math.random() * 4294967294),
     callback: function(err, confirmed_transaction) {
       if (err) {
         alert('Error: \n\n' + err);
