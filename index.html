@@ -58,13 +58,13 @@
     callback: function(err, confirmed) {
       var scriptElem = document.getElementById('ripple-checkout');
       var message = document.createElement('div');
-      message.innerHTML = err || 'Confirmed!';
+      message.innerHTML = err || '<code>Confirmed!<code>';
       scriptElem.parentNode.insertBefore(message, scriptElem.nextSibling);
     }
   });
 </script>
 
-<p>(Click me! I work!)</p>
+<p>(Click me! I work! ...and wait for the word <code>Confirmed!<code> to appear underneath the button)</p>
 
 <br>
 
