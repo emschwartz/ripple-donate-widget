@@ -147,7 +147,13 @@ function RippleCheckout(opts) {
             continue;
           }
 
-          callback(null, true);
+          callback(null, {
+            src_address: res.Account,
+            dst_address: res.Destination,
+            dst_amount: balanceChanges[b],
+            dst_tag: res.DestinationTag,
+            tx_hash: res.hash
+          });
           return;
         }
 

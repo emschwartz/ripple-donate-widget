@@ -35,6 +35,7 @@
 <p>This is what the following code snippet will include in your webpage:</p>
 <script type='text/javascript' src='./ripple-checkout.js'></script>
 <script type='text/javascript' id='ripple-checkout'>
+
   var checkout = RippleCheckout({
     dst_address: 'r4nkJpL9se94ASQut4eXRRtnBPtDpY2PZ6',
     server: {
@@ -51,18 +52,15 @@
       issuer: ''
     },
     dst_tag: 123,
-    callback: function(err, confirmed) {
-      var scriptElem = document.getElementById('ripple-checkout');
-      var message = document.createElement('div');
-      message.innerHTML = err || '<code>Confirmed!<code>';
-      scriptElem.parentNode.insertBefore(message, scriptElem.nextSibling);
+    callback: function(err, confirmed_transaction) {
+      alert('Transaction Confirmed: \n\n' + JSON.stringify(confirmed_transaction));
     }
   });
+
 </script>
 
-<p>Click me! I work!
-<br>
-...and wait for the word <code>Confirmed!</code> to appear below the button</p>
+<strong>Click me!</strong>
+...and wait for the confirmation alert once you've submitted the payment.
 
 <br>
 
