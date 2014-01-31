@@ -10,8 +10,6 @@ See [http://emschwartz.github.io/ripple-checkout/](http://emschwartz.github.io/r
 Copy the `ripple-checkout.js` script into your page's directory and include the following elements in the page:
 
 ```html
-<body>
-
 <div id='ripple-checkout'></div>
 <script type='text/javascript' src='./ripple-checkout.js'></script>
 <script type='text/javascript'>
