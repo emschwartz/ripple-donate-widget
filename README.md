@@ -3,7 +3,9 @@ ripple-checkout
 
 An embeddable widget for paying with Ripple.
 
-### Including in a webpage
+See [http://emschwartz.github.io/ripple-checkout/](http://emschwartz.github.io/ripple-checkout/) for a live demo.
+
+### How to include the widget in a webpage:
 
 Copy the `ripple-checkout.js` script and the `ripple-checkout-button.png` image into your page's directory and include the following `<script>` elements in the page:
 
@@ -22,7 +24,7 @@ Copy the `ripple-checkout.js` script and the `ripple-checkout-button.png` image 
 
   checkout.addButton({
     dst_amount: {
-      value: '1',
+      value: '20',
       currency: 'XRP',
       issuer: ''
     },
