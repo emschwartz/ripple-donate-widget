@@ -37,23 +37,27 @@
 <script type='text/javascript' id='ripple-checkout'>
 
   var checkout = RippleCheckout({
-    dst_address: 'r4nkJpL9se94ASQut4eXRRtnBPtDpY2PZ6',
-    server: {
-      host: 's_west.ripple.com',
-      port: '443',
-      secure: true
-    }
+    dst_address: 'rLpq5RcRzA8FU1yUqEPW4xfsdwon7casuM',
+    // server: {
+    //   host: 's_west.ripple.com',
+    //   port: '443',
+    //   secure: true
+    // }
   });
 
   checkout.addButton({
     dst_amount: {
       value: '20',
       currency: 'XRP',
-      issuer: ''
+      issuer: '' // Issuer can be specified for non-XRP currencies or left blank
     },
-    dst_tag: 123,
+    dst_tag: Math.floor(Math.random() * 4294967295),
     callback: function(err, confirmed_transaction) {
-      alert('Transaction Confirmed: \n\n' + JSON.stringify(confirmed_transaction));
+      if (err) {
+        alert('Error: \n\n' + err);
+      } else {
+        alert('Transaction Confirmed: \n\n' + JSON.stringify(confirmed_transaction));
+      }
     }
   });
 
@@ -76,23 +80,27 @@
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">id=</span><span class="s">'ripple-checkout'</span><span class="nt">&gt;</span>
 
   <span class="kd">var</span> <span class="nx">checkout</span> <span class="o">=</span> <span class="nx">RippleCheckout</span><span class="p">({</span>
-    <span class="nx">dst_address</span><span class="o">:</span> <span class="s1">'r4nkJpL9se94ASQut4eXRRtnBPtDpY2PZ6'</span><span class="p">,</span>
-    <span class="nx">server</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">host</span><span class="o">:</span> <span class="s1">'s_west.ripple.com'</span><span class="p">,</span>
-      <span class="nx">port</span><span class="o">:</span> <span class="s1">'443'</span><span class="p">,</span>
-      <span class="nx">secure</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">}</span>
+    <span class="nx">dst_address</span><span class="o">:</span> <span class="s1">'rLpq5RcRzA8FU1yUqEPW4xfsdwon7casuM'</span><span class="p">,</span>
+    <span class="c1">// server: {</span>
+    <span class="c1">//   host: 's_west.ripple.com',</span>
+    <span class="c1">//   port: '443',</span>
+    <span class="c1">//   secure: true</span>
+    <span class="c1">// }</span>
   <span class="p">});</span>
 
   <span class="nx">checkout</span><span class="p">.</span><span class="nx">addButton</span><span class="p">({</span>
     <span class="nx">dst_amount</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">value</span><span class="o">:</span> <span class="s1">'20'</span><span class="p">,</span>
       <span class="nx">currency</span><span class="o">:</span> <span class="s1">'XRP'</span><span class="p">,</span>
-      <span class="nx">issuer</span><span class="o">:</span> <span class="s1">''</span>
+      <span class="nx">issuer</span><span class="o">:</span> <span class="s1">''</span> <span class="c1">// Issuer can be specified for non-XRP currencies or left blank</span>
     <span class="p">},</span>
-    <span class="nx">dst_tag</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="nx">dst_tag</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">4294967295</span><span class="p">),</span>
     <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">confirmed_transaction</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">alert</span><span class="p">(</span><span class="s1">'Transaction Confirmed: \n\n'</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">confirmed_transaction</span><span class="p">));</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'Error: \n\n'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">alert</span><span class="p">(</span><span class="s1">'Transaction Confirmed: \n\n'</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">confirmed_transaction</span><span class="p">));</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">});</span>
 
