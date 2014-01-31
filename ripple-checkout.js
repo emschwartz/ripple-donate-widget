@@ -74,13 +74,13 @@ function RippleCheckout(opts) {
       button.setAttribute('href', url);
       button.setAttribute('target', '_blank');
       button.onmouseover = function(){
-        image.src = './img/' + button_type + '/hover.png';
+        image.src = image_src_base + encoded_images[button_type].hover;
       };
       button.onmouseout = function(){
-        image.src = './img/' + button_type + '/button.png';
+        image.src = image_src_base + encoded_images[button_type].button;
       };
       button.onmousedown = function(){
-        image.src = './img/' + button_type + '/clicked.png';
+        image.src = image_src_base + encoded_images[button_type].clicked;
       };
 
       // Insert DOM elements
