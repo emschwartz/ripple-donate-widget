@@ -51,7 +51,7 @@
       currency: 'XRP',
       issuer: '' // Issuer can be specified for non-XRP currencies or left blank
     },
-    dst_tag: Math.floor(Math.random() * 4294967295),
+    dst_tag: Math.floor(Math.random() * 4294967294),
     callback: function(err, confirmed_transaction) {
       if (err) {
         alert('Error: \n\n' + err);
@@ -94,7 +94,7 @@
       <span class="nx">currency</span><span class="o">:</span> <span class="s1">'XRP'</span><span class="p">,</span>
       <span class="nx">issuer</span><span class="o">:</span> <span class="s1">''</span> <span class="c1">// Issuer can be specified for non-XRP currencies or left blank</span>
     <span class="p">},</span>
-    <span class="nx">dst_tag</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">4294967295</span><span class="p">),</span>
+    <span class="nx">dst_tag</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">4294967294</span><span class="p">),</span>
     <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">confirmed_transaction</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s1">'Error: \n\n'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
