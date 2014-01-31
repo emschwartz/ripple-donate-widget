@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ripple-checkout by emschwartz</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ripple-checkout</h1>
+        <p>An embeddable widget for paying with Ripple.</p>
+
+        <p class="view"><a href="https://github.com/emschwartz/ripple-checkout">View the Project on GitHub <small>emschwartz/ripple-checkout</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/emschwartz/ripple-checkout/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/emschwartz/ripple-checkout/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/emschwartz/ripple-checkout">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="ripple-checkout" class="anchor" href="#ripple-checkout"><span class="octicon octicon-link"></span></a>ripple-checkout</h1>
+
+<p>An embeddable widget for paying with Ripple.</p>
+
+<h3>
+<a name="including-in-a-webpage" class="anchor" href="#including-in-a-webpage"><span class="octicon octicon-link"></span></a>Including in a webpage</h3>
+
+<p>Copy the <code>ripple-checkout.js</code> script and the <code>ripple-checkout-button.png</code> image into your page's directory and include the following <code>&lt;script&gt;</code> elements in the page:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'./ripple-checkout.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">id=</span><span class="s">'ripple-checkout'</span><span class="nt">&gt;</span>
+
+  <span class="kd">var</span> <span class="nx">checkout</span> <span class="o">=</span> <span class="nx">RippleCheckout</span><span class="p">({</span>
+    <span class="nx">dst_address</span><span class="o">:</span> <span class="s1">'r4nkJpL9se94ASQut4eXRRtnBPtDpY2PZ6'</span><span class="p">,</span>
+    <span class="nx">server</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">host</span><span class="o">:</span> <span class="s1">'s_west.ripple.com'</span><span class="p">,</span>
+      <span class="nx">port</span><span class="o">:</span> <span class="s1">'443'</span><span class="p">,</span>
+      <span class="nx">secure</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="nx">checkout</span><span class="p">.</span><span class="nx">addButton</span><span class="p">({</span>
+    <span class="nx">dst_amount</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">value</span><span class="o">:</span> <span class="s1">'1'</span><span class="p">,</span>
+      <span class="nx">currency</span><span class="o">:</span> <span class="s1">'XRP'</span><span class="p">,</span>
+      <span class="nx">issuer</span><span class="o">:</span> <span class="s1">''</span>
+    <span class="p">},</span>
+    <span class="nx">dst_tag</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">confirmed</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">scriptElem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'ripple-checkout'</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'div'</span><span class="p">);</span>
+      <span class="nx">message</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">err</span> <span class="o">||</span> <span class="s1">'Confirmed!'</span><span class="p">;</span>
+      <span class="nx">scriptElem</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">scriptElem</span><span class="p">.</span><span class="nx">nextSibling</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/emschwartz">emschwartz</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
