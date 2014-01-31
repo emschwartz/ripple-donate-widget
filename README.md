@@ -24,7 +24,7 @@ Copy the `ripple-checkout.js` script and the `ripple-checkout-button.png` image 
 
   checkout.addButton({
     dst_amount: {
-      value: '20',
+      value: '10',
       currency: 'XRP',
       issuer: '' // Issuer can be specified for non-XRP currencies or left blank
     },
