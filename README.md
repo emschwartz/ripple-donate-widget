@@ -29,11 +29,8 @@ Copy the `ripple-checkout.js` script and the `ripple-checkout-button.png` image 
       issuer: ''
     },
     dst_tag: 123,
-    callback: function(err, confirmed) {
-      var scriptElem = document.getElementById('ripple-checkout');
-      var message = document.createElement('div');
-      message.innerHTML = err || 'Confirmed!';
-      scriptElem.parentNode.insertBefore(message, scriptElem.nextSibling);
+    callback: function(err, confirmed_transaction) {
+      alert('Transaction Confirmed: \n\n' + JSON.stringify(confirmed_transaction));
     }
   });
 
