@@ -5,8 +5,9 @@
 
 <body>
 
+<div id='ripple-checkout'></div>
 <script type='text/javascript' src='./ripple-checkout.js'></script>
-<script type='text/javascript' id='ripple-checkout'>
+<script type='text/javascript'>
 
   var checkout = RippleCheckout({
     dst_address: 'rLpq5RcRzA8FU1yUqEPW4xfsdwon7casuM',
@@ -17,9 +18,10 @@
     dst_amount: {
       value: '10',
       currency: 'XRP',
-      issuer: '' // Issuer can be specified for non-XRP currencies or left blank
+      issuer: '' // Issuer can be left blank or specified for non-XRP currencies
     },
     dst_tag: Math.floor(Math.random() * 4294967294),
+    // button_type: 'pay', // Defaults to 'pay', other option is 'donate'
     callback: function(err, confirmed_transaction) {
       if (err) {
         alert('Error: \n\n' + err);
