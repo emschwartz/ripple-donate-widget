@@ -9,23 +9,27 @@
 <script type='text/javascript' id='ripple-checkout'>
 
   var checkout = RippleCheckout({
-    dst_address: 'r4nkJpL9se94ASQut4eXRRtnBPtDpY2PZ6',
-    server: {
-      host: 's_west.ripple.com',
-      port: '443',
-      secure: true
-    }
+    dst_address: 'rLpq5RcRzA8FU1yUqEPW4xfsdwon7casuM',
+    // server: {
+    //   host: 's_west.ripple.com',
+    //   port: '443',
+    //   secure: true
+    // }
   });
 
   checkout.addButton({
     dst_amount: {
       value: '20',
       currency: 'XRP',
-      issuer: ''
+      issuer: '' // Issuer can be specified for non-XRP currencies or left blank
     },
-    dst_tag: 123,
+    dst_tag: Math.floor(Math.random() * 4294967295),
     callback: function(err, confirmed_transaction) {
-      alert('Transaction Confirmed: \n\n' + JSON.stringify(confirmed_transaction));
+      if (err) {
+        alert('Error: \n\n' + err);
+      } else {
+        alert('Transaction Confirmed: \n\n' + JSON.stringify(confirmed_transaction));
+      }
     }
   });
 
