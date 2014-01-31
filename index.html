@@ -36,6 +36,34 @@
 <h3>
 <a name="including-in-a-webpage" class="anchor" href="#including-in-a-webpage"><span class="octicon octicon-link"></span></a>Including in a webpage</h3>
 
+<p>This is what the following code snippet will include in your webpage:</p>
+<script type='text/javascript' src='./ripple-checkout.js'></script>
+<script type='text/javascript' id='ripple-checkout'>
+  var checkout = RippleCheckout({
+    dst_address: 'r4nkJpL9se94ASQut4eXRRtnBPtDpY2PZ6',
+    server: {
+      host: 's_west.ripple.com',
+      port: '443',
+      secure: true
+    }
+  });
+
+  checkout.addButton({
+    dst_amount: {
+      value: '1',
+      currency: 'XRP',
+      issuer: ''
+    },
+    dst_tag: 123,
+    callback: function(err, confirmed) {
+      var scriptElem = document.getElementById('ripple-checkout');
+      var message = document.createElement('div');
+      message.innerHTML = err || 'Confirmed!';
+      scriptElem.parentNode.insertBefore(message, scriptElem.nextSibling);
+    }
+  });
+</script>
+
 <p>Copy the <code>ripple-checkout.js</code> script and the <code>ripple-checkout-button.png</code> image into your page's directory and include the following <code>&lt;script&gt;</code> elements in the page:</p>
 
 <div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'./ripple-checkout.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
