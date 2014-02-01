@@ -39,3 +39,10 @@ Copy the `ripple-checkout.js` script into your page's directory and include the 
 
 </script>
 ```
+
+### How it works:
+
+Clicking on the button will pop the user out to a version of the `ripple-client` that has a pre-filled payment form. 
+
+
+The widget uses a WebSocket connection to listen to the Ripple Network transaction stream. Once the transaction has been processed and the funds have been confirmed in the `dst_address` account, the `callback` function registered with `addButton({...})` will be called with the details of the transaction.
