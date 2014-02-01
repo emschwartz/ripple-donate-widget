@@ -27,6 +27,7 @@ Copy the `ripple-checkout.js` script into your page's directory and include the 
     },
     dst_tag: Math.floor(Math.random() * 4294967294),
     // button_type: 'pay', // Defaults to 'pay', other option is 'donate'
+    // dom_id: 'ripple-checkout', // Defaults to 'ripple-checkout'
     callback: function(err, confirmed_transaction) {
       if (err) {
         alert('Error: \n\n' + err);
