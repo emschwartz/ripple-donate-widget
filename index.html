@@ -49,7 +49,7 @@
       issuer: '' // Issuer can be left blank or specified for non-XRP currencies
     },
     dst_tag: Math.floor(Math.random() * 4294967294),
-    // button_type: 'pay', // Defaults to 'pay', other option is 'donate'
+    button_type: 'pay', // Defaults to 'pay', other option is 'donate'
     dom_id: 'ripple-checkout-pay', // Defaults to 'ripple-checkout'
     callback: function(err, confirmed_transaction) {
       if (err) {
@@ -83,7 +83,7 @@
       issuer: '' // Issuer can be left blank or specified for non-XRP currencies
     },
     dst_tag: Math.floor(Math.random() * 4294967294),
-    // button_type: 'pay', // Defaults to 'pay', other option is 'donate'
+    button_type: 'donate', // Defaults to 'pay', other option is 'donate'
     dom_id: 'ripple-checkout-donate', // Defaults to 'ripple-checkout'
     callback: function(err, confirmed_transaction) {
       if (err) {
