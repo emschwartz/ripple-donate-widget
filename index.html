@@ -100,11 +100,9 @@
 
 
 <h3>
-<a name="including-in-a-webpage" class="anchor" href="#including-in-a-webpage"><span class="octicon octicon-link"></span></a>How to include the widget in a webpage:</h3>
+<a name="how-to-include-the-widget-in-a-webpage" class="anchor" href="#how-to-include-the-widget-in-a-webpage"><span class="octicon octicon-link"></span></a>How to include the widget in a webpage:</h3>
 
-
-<p>Copy the <code>ripple-checkout.js<code> script into your page's directory and include the following elements in the page:</p>
-
+<p>Copy the <code>ripple-checkout.js</code> script into your page's directory and include the following elements in the page:</p>
 
 <div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">'ripple-checkout'</span><span class="nt">&gt;&lt;/div&gt;</span>
 <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'./ripple-checkout.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
@@ -134,6 +132,15 @@
   <span class="p">});</span>
 
 <span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<h3>
+<a name="how-it-works" class="anchor" href="#how-it-works"><span class="octicon octicon-link"></span></a>How it works:</h3>
+
+<p>Clicking on the button will direct the user to a <code>ripple-client</code> page with a pre-filled payment form. </p>
+
+<p>The widget uses a WebSocket connection to listen to the Ripple Network transaction stream. Once the transaction has been processed and the funds have been confirmed in the <code>dst_address</code> account, the <code>callback</code> function registered with <code>.addButton({...})</code> will be called with the details of the transaction.</p></article>
+  </div>
 
 </pre></div>
       </section>
