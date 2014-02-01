@@ -50,6 +50,7 @@ function RippleCheckout(opts) {
           dst_amount: dst_amount
         },
         button_type = opts.button_type || 'pay',
+        dom_id = opts.dom_id || 'ripple-checkout',
         callback = opts.callback,
         url = generatePaymentUrl(button_opts);
 
@@ -84,7 +85,7 @@ function RippleCheckout(opts) {
       };
 
       // Insert DOM elements
-      var button_div = document.getElementById('ripple-checkout');
+      var button_div = document.getElementById(dom_id);
       button_div.insertBefore(button, button_div.lastChild);
     }
 

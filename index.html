@@ -33,7 +33,7 @@
 
 
 <p>This is what the following code snippet will include in your webpage:</p>
-<div id='ripple-checkout'></div>
+<div id='ripple-checkout-pay'></div>
 <script type='text/javascript' src='./ripple-checkout.js'></script>
 <script type='text/javascript'>
 
@@ -50,6 +50,7 @@
     },
     dst_tag: Math.floor(Math.random() * 4294967294),
     // button_type: 'pay', // Defaults to 'pay', other option is 'donate'
+    dom_id: 'ripple-checkout-pay', // Defaults to 'ripple-checkout'
     callback: function(err, confirmed_transaction) {
       if (err) {
         alert('Error: \n\n' + err);
@@ -62,6 +63,40 @@
 </script>
 
 <p>(Try me!)</p>
+
+<br>
+
+<p>Or you can use the Donate button:</p>
+<div id='ripple-checkout-donate'></div>
+<script type='text/javascript' src='./ripple-checkout.js'></script>
+<script type='text/javascript'>
+
+  var checkout = RippleCheckout({
+    dst_address: 'rLpq5RcRzA8FU1yUqEPW4xfsdwon7casuM',
+    server_url: 'wss://s_west.ripple.com'
+  });
+
+  checkout.addButton({
+    dst_amount: {
+      value: '10',
+      currency: 'XRP',
+      issuer: '' // Issuer can be left blank or specified for non-XRP currencies
+    },
+    dst_tag: Math.floor(Math.random() * 4294967294),
+    // button_type: 'pay', // Defaults to 'pay', other option is 'donate'
+    dom_id: 'ripple-checkout-donate', // Defaults to 'ripple-checkout'
+    callback: function(err, confirmed_transaction) {
+      if (err) {
+        alert('Error: \n\n' + err);
+      } else {
+        alert('Transaction Confirmed: \n\n' + JSON.stringify(confirmed_transaction));
+      }
+    }
+  });
+
+</script>
+
+<br>
 
 
 <h3>
@@ -88,6 +123,7 @@
     <span class="p">},</span>
     <span class="nx">dst_tag</span><span class="o">:</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">4294967294</span><span class="p">),</span>
     <span class="c1">// button_type: 'pay', // Defaults to 'pay', other option is 'donate'</span>
+    <span class="c1">// dom_id: 'ripple-checkout', // Defaults to 'ripple-checkout'</span>
     <span class="nx">callback</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">confirmed_transaction</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">alert</span><span class="p">(</span><span class="s1">'Error: \n\n'</span> <span class="o">+</span> <span class="nx">err</span><span class="p">);</span>
