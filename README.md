@@ -3,7 +3,7 @@ ripple-checkout
 
 An embeddable widget for paying with Ripple.
 
-See [http://emschwartz.github.io/ripple-checkout/](http://emschwartz.github.io/ripple-checkout/) for a live demo.
+See [http://emschwartz.github.io/ripple-checkout/](http://emschwartz.github.io/ripple-donate-widget/) for a live demo.
 
 ### How to include the widget in a webpage:
 
